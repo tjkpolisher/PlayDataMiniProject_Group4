@@ -19,7 +19,6 @@ df['time'] = df_date[1]
 df = df.drop(['Measurement date'],axis = 1)
 
 df = df.groupby(['date'], as_index=False).agg({'SO2':'mean', 'NO2':'mean', 'O3':'mean', 'CO':'mean', 'PM10':'mean', 'PM2.5':'mean'})
-df.head()
 
 # 피어슨 상관계수 계산
 df_air = df.corr()
