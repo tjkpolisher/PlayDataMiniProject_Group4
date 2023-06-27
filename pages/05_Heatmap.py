@@ -14,6 +14,7 @@ df = common.get_data()
 df['Measurement date'] = pd.to_datetime(df['Measurement date'])  # 문자열을 날짜/시간 형식으로 변환
 df['date'] = df['Measurement date'].dt.date  # 날짜 컬럼 생성
 df['time'] = df['Measurement date'].dt.time  # 시간 컬럼 생성
+df['date'] = pd.to_numeric(df['date'])
 
 df = df.groupby(['date'], as_index=False).agg({'SO2':'mean', 'NO2':'mean', 'O3':'mean', 'CO':'mean', 'PM10':'mean', 'PM2.5':'mean'})
 
