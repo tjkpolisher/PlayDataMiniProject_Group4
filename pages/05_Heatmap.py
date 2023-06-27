@@ -22,6 +22,7 @@ df = df.groupby(['date'], as_index=False).agg({'SO2':'mean', 'NO2':'mean', 'O3':
 
 # 피어슨 상관계수 계산
 df_air = df.corr()
+df_air.fillna(method='backfill', inplace=True)
 
 # 상관계수 히트맵
 ax = sns.heatmap(df_air, annot=True, cmap='coolwarm', annot_kws={"size": 24})
