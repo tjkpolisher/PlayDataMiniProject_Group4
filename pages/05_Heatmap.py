@@ -31,10 +31,11 @@ df['date'] = pd.to_datetime(df['date'])
 df_air = df.corr()
 
 # 상관계수 히트맵
+plt.figure(figsize=(12, 10))
 ax = sns.heatmap(df_air, annot=True, cmap='coolwarm', annot_kws={"size": 24})
 ax.xaxis.tick_top()
 ax.tick_params(axis="x", labelsize=25)
 ax.tick_params(axis="y", labelsize=25)
 plt.title("Heatmap", fontsize=35, pad=30)
 plt.tight_layout()
-st.pyplot()
+st.pyplot(plt)
