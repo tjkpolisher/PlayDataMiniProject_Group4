@@ -22,7 +22,7 @@ df_date.head()
 
 df['date'] = df_date[0]
 df['time'] = df_date[1]
-df = df.drop(['Measurement date'],axis = 1)
+df['Measurement date'] = pd.to_datetime(df['Measurement date'])
 
 df = df.groupby(['date'], as_index=False).agg({'SO2':'mean', 'NO2':'mean', 'O3':'mean', 'CO':'mean', 'PM10':'mean', 'PM2.5':'mean'})
 
