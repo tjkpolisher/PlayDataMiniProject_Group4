@@ -24,13 +24,10 @@ df = df.groupby(['date'], as_index=False).agg({'SO2':'mean', 'NO2':'mean', 'O3':
 df_air = df.corr()
 
 # 상관계수 히트맵
-fig = plt.figure(figsize=(18, 16))
-
-ax = sns.heatmap(df_air, annot=True,
-                 cmap='coolwarm', annot_kws={"size":24})
+ax = sns.heatmap(df_air, annot=True, cmap='coolwarm', annot_kws={"size": 24})
 ax.xaxis.tick_top()
 ax.tick_params(axis="x", labelsize=25)
 ax.tick_params(axis="y", labelsize=25)
 plt.title("Heatmap", fontsize=35, pad=30)
 plt.tight_layout()
-st.pyplot(fig)
+st.pyplot()
