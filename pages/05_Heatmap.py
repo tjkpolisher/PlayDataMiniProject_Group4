@@ -15,7 +15,6 @@ df['Measurement date'] = pd.to_datetime(df['Measurement date'])  # 문자열을 
 df['hour'] = df.loc[:, "Measurement date"].dt.hour
 df['date'] = df.loc[:, "Measurement date"].dt.date  # 날짜 컬럼 생성
 df['time'] = df.loc[:, "Measurement date"].dt.time  # 시간 컬럼 생성
-df = df.drop(['Measurement date'], axis=1)
 
 df['Measurement date'] = df['Measurement date'].astype('str')
 df_date =df['Measurement date'].str.split(" ",n=1,expand=True) # 바로 데이터프레임의 컬럼으로 생성 expand=True
