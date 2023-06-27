@@ -25,7 +25,8 @@ df['time'] = df_date[1]
 df['Measurement date'] = pd.to_datetime(df['Measurement date'])
 
 df = df.groupby(['date'], as_index=False).agg({'SO2':'mean', 'NO2':'mean', 'O3':'mean', 'CO':'mean', 'PM10':'mean', 'PM2.5':'mean'})
-print(df)
+df['Measurement date'] = pd.to_datetime(df['Measurement date'])
+df['date'] = pd.to_datetime(df['date'])
 # Calculate Pearson's correlation coefficient
 df_air = df.corr()
 
