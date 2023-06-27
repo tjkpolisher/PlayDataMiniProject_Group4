@@ -10,7 +10,7 @@ common.page_config()
 st.title("Time-Pollution Material Concentration Plot")
 
 df = common.get_data()
-df['Measurement date'] = df['Measurement date'].astype('datetime64')
+df['Measurement date'] = pd.to_datetime(df['Measurement date'])
 df['hour'] = df.loc[:, "Measurement date"].dt.hour
 
 data = df.groupby('hour', as_index=False).agg({'SO2':'mean', 'NO2':'mean', 'O3':'mean', 'CO':'mean', 'PM10':'mean', 'PM2.5':'mean'})
