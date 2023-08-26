@@ -1,0 +1,13 @@
+# PlanetScale
+connection = pymysql.connect(
+    host='aws.connect.psdb.cloud',
+    # port=your_port,
+    user='rj7x49zsfg2vr1ezc3a3',
+    password='pscale_pw_EtzNwwQafRuiFt0mrOCWOSnSlBQFE4qJan3GmsFN0pF',
+    database='my_db',
+    ssl_ca='/etc/ssl/certs/ca-certificates.crt'
+)
+
+# Supabase
+url = "https://pxzeuhelysloznamcfir.supabase.co"
+key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB4emV1aGVseXNsb3puYW1jZmlyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODc3NDY1MDgsImV4cCI6MjAwMzMyMjUwOH0.RKfJ_-V8ZTCgpfra4zbLrPu4yAN7XUdxKHHP6vO4Jz8"
